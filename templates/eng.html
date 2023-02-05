@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>CVD - CV Maker</title>
+{% endblock %}
+
+{% block body %}
+<header>
+	<a href="#" class="on">English</a>
+	<a href="/kur">کوردی</a>
+	<h2>Make a new CV</h2>
+</header>
+<main>
+	<form action="/" method="POST">
+		<div id="info">
+			Full Name <input type="text" name="name" id="name"><br>
+			Address <input type="text" name="address" id="address"><br>
+			Phone Number <input type="text" name="number" id="number"><br>
+			E-Mail <input type="email" name="email" id="email"><br>
+		</div>
+
+		<div id="info-exp">
+			<div id="info-exp1">
+				<p>1</p>
+				Workplace or company <input type="text" name="exp-place-1" id="exp-place-1"><br>
+				Year started work <input type="number" name="exp-start-year-1" id="exp-start-year-1"><br>
+				Year stopped work <input type="number" name="exp-end-year-1" id="exp-end-year-1"><br>
+				About your position or work <textarea name="exp-about-1" id="exp-about-1"></textarea><br>
+			</div>
+			<div id="info-exp2" class='extra'>
+				<p>2</p>
+				Workplace or company <input type="text" name="exp-place-2" id="exp-place-2"><br>
+				Year started work <input type="number" name="exp-start-year-2" id="exp-start-year-2"><br>
+				Year stopped work <input type="number" name="exp-end-year-2" id="exp-end-year-2"><br>
+				About your position or work <textarea name="exp-about-2" id="exp-about-2"></textarea><br>
+			</div>
+			<div id="info-exp3" class='extra'>
+				<p>3</p>
+				Workplace or company <input type="text" name="exp-place-3" id="exp-place-3"><br>
+				Year started work <input type="number" name="exp-start-year-3" id="exp-start-year-3"><br>
+				Year stopped work <input type="number" name="exp-end-year-3" id="exp-end-year-3"><br>
+				About your position or work <textarea name="exp-about-3" id="exp-about-3"></textarea><br>
+			</div>
+			<div id="info-exp4" class='extra'>
+				<p>4</p>
+				Workplace or company <input type="text" name="exp-place-4" id="exp-place-4"><br>
+				Year started work <input type="number" name="exp-start-year-4" id="exp-start-year-4"><br>
+				Year stopped work <input type="number" name="exp-end-year-4" id="exp-end-year-4"><br>
+				About your position or work <textarea name="exp-about-4" id="exp-about-4"></textarea><br>
+			</div>
+		</div>
+
+		<button id='add-exp' type='button' class="add">Add Experience</button>
+
+		<div id="info-edu">
+			<div id="info-edu1">
+				<p>1</p>
+				School, institute, university, or place of study <input type="text" name="edu-place-1" id="edu-place-1"><br>
+				Degree aquired <input type="text" name="edu-degree-1" id="edu-degree-1"><br>
+				Year finished <input type="number" name="edu-year-1" id="edu-year-1"><br>
+				About studies or specialization <textarea name="edu-about-1" id="edu-about-1"></textarea><br>
+			</div>
+			<div id="info-edu2" class='extra'>
+				<p>2</p>
+				School, institute, university, or place of study <input type="text" name="edu-place-2" id="edu-place-2"><br>
+				Degree aquired <input type="text" name="edu-degree-2" id="edu-degree-2"><br>
+				Year finished <input type="number" name="edu-year-2" id="edu-year-2"><br>
+				About studies or specialization <textarea name="edu-about-2" id="edu-about-2"></textarea><br>
+			</div>
+			<div id="info-edu3" class='extra'>
+				<p>3</p>
+				School, institute, university, or place of study <input type="text" name="edu-place-3" id="edu-place-3"><br>
+				Degree aquired <input type="text" name="edu-degree-3" id="edu-degree-3"><br>
+				Year finished <input type="number" name="edu-year-3" id="edu-year-3"><br>
+				About studies or specialization <textarea name="edu-about-3" id="edu-about-3"></textarea><br>
+			</div>
+			<div id="info-edu4" class='extra'>
+				<p>4</p>
+				School, institute, university, or place of study <input type="text" name="edu-place-4" id="edu-place-4"><br>
+				Degree aquired <input type="text" name="edu-degree-4" id="edu-degree-4"><br>
+				Year finished <input type="number" name="edu-year-4" id="edu-year-4"><br>
+				About studies or specialization <textarea name="edu-about-4" id="edu-about-4"></textarea><br>
+			</div>
+		</div>
+
+		<button id='add-edu' type='button' class="add">Add Education</button>
+
+		<div id="info-ski">
+			<div id="info-ski1">
+				<p>1</p>
+				Skill <input type="text" name="ski-name-1" id="ski-name-1"><br>
+				About skill or proficiency <textarea name="ski-about-1" id="ski-about-1"></textarea><br>
+			</div>
+			<div id="info-ski2" class='extra'>
+				<p>2</p>
+				Skill <input type="text" name="ski-name-2" id="ski-name-2"><br>
+				About skill or proficiency <textarea name="ski-about-2" id="ski-about-2"></textarea><br>
+			</div>
+			<div id="info-ski3" class='extra'>
+				<p>3</p>
+				Skill <input type="text" name="ski-name-3" id="ski-name-3"><br>
+				About skill or proficiency <textarea name="ski-about-3" id="ski-about-3"></textarea><br>
+			</div>
+			<div id="info-ski4" class='extra'>
+				<p>4</p>
+				Skill <input type="text" name="ski-name-4" id="ski-name-4"><br>
+				About skill or proficiency <textarea name="ski-about-4" id="ski-about-4"></textarea><br>
+			</div>
+			<div id="info-ski5" class='extra'>
+				<p>5</p>
+				Skill <input type="text" name="ski-name-5" id="ski-name-5"><br>
+				About skill or proficiency <textarea name="ski-about-5" id="ski-about-5"></textarea><br>
+			</div>
+			<div id="info-ski6" class='extra'>
+				<p>6</p>
+				Skill <input type="text" name="ski-name-6" id="ski-name-6"><br>
+				About skill or proficiency <textarea name="ski-about-6" id="ski-about-6"></textarea><br>
+			</div>
+			<div id="info-ski7" class='extra'>
+				<p>7</p>
+				Skill <input type="text" name="ski-name-7" id="ski-name-7"><br>
+				About skill or proficiency <textarea name="ski-about-7" id="ski-about-7"></textarea><br>
+			</div>
+			<div id="info-ski8" class='extra'>
+				<p>8</p>
+				Skill <input type="text" name="ski-name-8" id="ski-name-8"><br>
+				About skill or proficiency <textarea name="ski-about-8" id="ski-about-8"></textarea><br>
+			</div>
+		</div>
+
+		<button id='add-ski' type='button' class='add'>Add Skill</button>
+
+		<button type='submit' class='submit'>Download!</button>
+	</form>
+</main>
+<footer>
+	<small>Any information provided will not be kept.</small><br>
+	<small>Free and Open-Source at </small>
+	<small><a href="https://codeberg.org/ahmadhf/cvd">codeberg.org/ahmadhf/cvd</a>.</small><br> 
+</footer>
+{% endblock %}

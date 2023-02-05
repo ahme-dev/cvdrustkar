@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>CVD - سیڤی دروستکەر</title>
+<style>
+	* { direction: rtl; }
+</style>
+{% endblock %}
+
+{% block body %}
+<header>
+	<a href="#" class='on'>کوردی</a>
+	<a href="/eng">English</a>
+	<h2>سیڤیەکی تازە دروستبکە</h2>
+</header>
+<main>
+	<form action="/" method="POST">
+		<div id="info">
+			ناوی تەواو <input type="text" name="name" id="name"><br>
+			ناونیشان <input type="text" name="address" id="address"><br>
+			ژمارەی تەلەفون <input type="text" name="number" id="number"><br>
+			ئیمێڵ <input type="email" name="email" id="email"><br>
+		</div>
+
+		<div id="info-exp">
+			<div id="info-exp1">
+				<p>1</p>
+				شوێنی کار یاخود کۆمپانیا <input type="text" name="exp-place-1" id="exp-place-1"><br>
+				ساڵی دەستپێکردنی کار <input type="number" name="exp-start-year-1" id="exp-start-year-1"><br>
+				ساڵی کۆتای کار <input type="number" name="exp-end-year-1" id="exp-end-year-1"><br>
+				لەبارەی کارەکە <textarea name="exp-about-1" id="exp-about-1"></textarea><br>
+			</div>
+			<div id="info-exp2" class='extra'>
+				<p>2</p>
+				شوێنی کار یاخود کۆمپانیا <input type="text" name="exp-place-2" id="exp-place-2"><br>
+				ساڵی دەستپێکردنی کار <input type="number" name="exp-start-year-2" id="exp-start-year-2"><br>
+				ساڵی کۆتای کار <input type="number" name="exp-end-year-2" id="exp-end-year-2"><br>
+				لەبارەی کارەکە <textarea name="exp-about-2" id="exp-about-2"></textarea><br>
+			</div>
+			<div id="info-exp3" class='extra'>
+				<p>3</p>
+				شوێنی کار یاخود کۆمپانیا <input type="text" name="exp-place-3" id="exp-place-3"><br>
+				ساڵی دەستپێکردنی کار <input type="number" name="exp-start-year-3" id="exp-start-year-3"><br>
+				ساڵی کۆتای کار <input type="number" name="exp-end-year-3" id="exp-end-year-3"><br>
+				لەبارەی کارەکە <textarea name="exp-about-3" id="exp-about-3"></textarea><br>
+			</div>
+			<div id="info-exp4" class='extra'>
+				<p>4</p>
+				شوێنی کار یاخود کۆمپانیا <input type="text" name="exp-place-4" id="exp-place-4"><br>
+				ساڵی دەستپێکردنی کار <input type="number" name="exp-start-year-4" id="exp-start-year-4"><br>
+				ساڵی کۆتای کار <input type="number" name="exp-end-year-4" id="exp-end-year-4"><br>
+				لەبارەی کارەکە <textarea name="exp-about-4" id="exp-about-4"></textarea><br>
+			</div>
+		</div>
+
+		<button id='add-exp' type='button' class="add">ئەزمونی تر</button>
+
+		<div id="info-edu">
+			<div id="info-edu1">
+				<p>1</p>
+				قوتابخانە، پەیمانگا، زانکۆ، یاخود شوێنی خوێندن <input type="text" name="edu-place-1" id="edu-place-1"><br>
+				بڕوانامەی بەدەستهێنراو <input type="text" name="edu-degree-1" id="edu-degree-1"><br>
+				ساڵی تەواوکردن <input type="number" name="edu-year-1" id="edu-year-1"><br>
+				لەبارەی خوێندنەکە یاخود بەشەکە <textarea name="edu-about-1" id="edu-about-1"></textarea><br>
+			</div>
+			<div id="info-edu2" class='extra'>
+				<p>2</p>
+				قوتابخانە، پەیمانگا، زانکۆ، یاخود شوێنی خوێندن <input type="text" name="edu-place-2" id="edu-place-2"><br>
+				بڕوانامەی بەدەستهێنراو <input type="text" name="edu-degree-2" id="edu-degree-2"><br>
+				ساڵی تەواوکردن <input type="number" name="edu-year-2" id="edu-year-2"><br>
+				لەبارەی خوێندنەکە یاخود بەشەکە <textarea name="edu-about-2" id="edu-about-2"></textarea><br>
+			</div>
+			<div id="info-edu3" class='extra'>
+				<p>3</p>
+				قوتابخانە، پەیمانگا، زانکۆ، یاخود شوێنی خوێندن <input type="text" name="edu-place-3" id="edu-place-3"><br>
+				بڕوانامەی بەدەستهێنراو <input type="text" name="edu-degree-3" id="edu-degree-3"><br>
+				ساڵی تەواوکردن <input type="number" name="edu-year-3" id="edu-year-3"><br>
+				لەبارەی خوێندنەکە یاخود بەشەکە <textarea name="edu-about-3" id="edu-about-3"></textarea><br>
+			</div>
+			<div id="info-edu4" class='extra'>
+				<p>4</p>
+				قوتابخانە، پەیمانگا، زانکۆ، یاخود شوێنی خوێندن <input type="text" name="edu-place-4" id="edu-place-4"><br>
+				بڕوانامەی بەدەستهێنراو <input type="text" name="edu-degree-4" id="edu-degree-4"><br>
+				ساڵی تەواوکردن <input type="number" name="edu-year-4" id="edu-year-4"><br>
+				لەبارەی خوێندنەکە یاخود بەشەکە <textarea name="edu-about-4" id="edu-about-4"></textarea><br>
+			</div>
+		</div>
+
+		<button id='add-edu' type='button' class="add">بڕوانامەی تر</button>
+
+		<div id="info-ski">
+			<div id="info-ski1">
+				<p>1</p>
+				توانا یان بەهرە <input type="text" name="ski-name-1" id="ski-name-1"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-1" id="ski-about-1"></textarea><br>
+			</div>
+			<div id="info-ski2" class='extra'>
+				<p>2</p>
+				توانا یان بەهرە <input type="text" name="ski-name-2" id="ski-name-2"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-2" id="ski-about-2"></textarea><br>
+			</div>
+			<div id="info-ski3" class='extra'>
+				<p>3</p>
+				توانا یان بەهرە <input type="text" name="ski-name-3" id="ski-name-3"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-3" id="ski-about-3"></textarea><br>
+			</div>
+			<div id="info-ski4" class='extra'>
+				<p>4</p>
+				توانا یان بەهرە <input type="text" name="ski-name-4" id="ski-name-4"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-4" id="ski-about-4"></textarea><br>
+			</div>
+			<div id="info-ski5" class='extra'>
+				<p>5</p>
+				توانا یان بەهرە <input type="text" name="ski-name-5" id="ski-name-5"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-5" id="ski-about-5"></textarea><br>
+			</div>
+			<div id="info-ski6" class='extra'>
+				<p>6</p>
+				توانا یان بەهرە <input type="text" name="ski-name-6" id="ski-name-6"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-6" id="ski-about-6"></textarea><br>
+			</div>
+			<div id="info-ski7" class='extra'>
+				<p>7</p>
+				توانا یان بەهرە <input type="text" name="ski-name-7" id="ski-name-7"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-7" id="ski-about-7"></textarea><br>
+			</div>
+			<div id="info-ski8" class='extra'>
+				<p>8</p>
+				توانا یان بەهرە <input type="text" name="ski-name-8" id="ski-name-8"><br>
+				لەبارەی توانا و بەهرەکەوە یاخود ئاستت تێیدا <textarea name="ski-about-8" id="ski-about-8"></textarea><br>
+			</div>
+		</div>
+
+		<button id='add-ski' type='button' class='add'>بەهرە یان توانایەکی تر</button>
+
+		<button type='submit' class='submit'>دایبەزێنە!</button>
+	</form>
+</main>
+<footer>
+	<small>هیچ زانیاریەکی تایبەت کە لێرەدا داخڵ دەکرێت نامێنێەتەوە.</small><br>
+	<small>دەتوانیت کۆدەکە سەیربکەیت و دایبەزێنیت و دەستکاری بکەی - بەردەست لێرەوە </small>
+	<small><a href="https://codeberg.org/ahmadhf/cvd">codeberg.org/ahmadhf/cvd</a>.</small><br>
+</footer>
+{% endblock %}
